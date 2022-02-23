@@ -1,0 +1,23 @@
+# list comprehension  # Permutations
+
+#You are given three integers x,y,z representing the 
+# dimensions of a cuboid along with an integer .
+#  Print a list of all possible coordinates given
+#  by (i,j,k) on a 3D grid where the sum of i+j+k
+# is not equal to n.
+
+if __name__=='__main__':
+    x=int(input())
+    y=int(input())
+    z=int(input())
+    n=int(input())
+
+    x1=[p for p in range(x+1)]
+    y1=[q for q in range(y+1)]
+    z1=[r for r in range(z+1)]
+
+    perm=[[i,j,k] for i in x1 for j in y1 for k in z1]
+    l1=[l for l in perm if sum(l)!=n]
+    print(l1)
+
+
