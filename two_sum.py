@@ -6,13 +6,16 @@
 
 
 class Solution:
-    def twoSum(self, nums: list[int], target: int):
-        
-        dict_nums= {}
-        
-        for idx,num in enumerate(nums):
-            dict_nums[num]= idx
+    def twoSum(nums,target):
+        complementMap = dict()
+        for i in range(len(nums)):
+            num=nums[i]
+            complement=target-num
+            if num in complementMap:
+                return [complementMap[num],i]
+            else:
+                complementMap[complement] = i
 
-        for idx,num in enumerate(nums):
-            if target - num in dict_nums and idx != dict_nums[target-num]:
-                return [idx,dict_nums[target-num]]
+obj=Solution
+
+obj.twoSum([1,2,3,4,5],4)
